@@ -1,0 +1,13 @@
+{
+    "eqeqeq": true,
+    "indent": 4,
+    "strict": true,
+    "latedef": true,
+    "newcap": true,
+    "undef": true,
+    "unused": true,
+    "maxlen": 80,
+    "boss": true,
+    "globalstrict": false,
+    "node": true
+}
