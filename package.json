@@ -1,6 +1,6 @@
 {
   "name": "swig-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Swig extension for prerendering React components",
   "main": "swig-react.js",
   "scripts": {
@@ -33,6 +33,7 @@
     "jshint": "~2.5.3",
     "swig": "~1.4.2",
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "node-jsx": "~0.11.0"
   }
 }

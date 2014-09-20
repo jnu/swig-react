@@ -101,12 +101,14 @@ function compile(compiler, args, content, parents, options) {
     js +=           "__o += ' ' + key + '=\"' + val + '\"';";
     js +=       "}";
     js +=   "}";
+    // Add the react component module (full path)
+    js +=   "__o += ' data-react-class=\"" + componentPath + "\"';";
     // Add the serialized properties as an attribute
     js +=   "__o += ' data-react-props=\"' + __p + '\">';";
     // Render the React component via an extension (from the local environment)
     js +=   "__o += _ext.react('" + fullPath + "', props);";
     // Close containing node
-    js +=   "__o += '</" + container.tag + ">';";
+    js +=   "__o += '</' + container.tag + '>';";
     js +=   "return __o;";
     js += "})(" + props + ", " + container + ");\n";
     // ... Hope that works!
@@ -187,8 +189,12 @@ exports.useTag = function(swig, customName) {
 };
 
 // export tag interface
-exports.name = name;
-exports.ends = ends;
-exports.blockLevel = blockLevel;
-exports.compile = compile;
-exports.parse = parse;
+exports.tag = {
+    name: name,
+    ends: ends,
+    blockLevel: blockLevel,
+    compile: compile,
+    parse: parse
+};
+
+exports.extension = renderReactComponentToString;
