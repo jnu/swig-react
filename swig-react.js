@@ -62,7 +62,7 @@ var blockLevel = false;
  * Tag compiler
  */
 function compile(compiler, args, content, parents, options) {
-    var componentRoot = options.reactComponentRoot || "./modules/";
+    var componentRoot = options.reactComponentRoot || "./components/";
     var componentPath = args.shift();
     // Find class relative to opts.componentRoot, which itself by default is
     // relative to the process's CWD.
